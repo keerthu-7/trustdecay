@@ -55,7 +55,6 @@ public final class MetricsComputer {
         long keepTrue = 0;
         long keepTrueDeleted = 0;
         long keepFalse = 0;
-        long keepFalseRetainedHot = 0;
         long keepFalseArchivedOrDeleted = 0;
 
         long convergedCount = 0;
@@ -67,7 +66,8 @@ public final class MetricsComputer {
                 if (obj.tier == Tier.DELETED) keepTrueDeleted++;
             } else {
                 keepFalse++;
-                if (obj.tier == Tier.HOT) keepFalseRetainedHot++;
+                if (obj.tier == Tier.HOT) {
+                }
                 if (obj.tier == Tier.COLD || obj.tier == Tier.DELETED) keepFalseArchivedOrDeleted++;
             }
 
